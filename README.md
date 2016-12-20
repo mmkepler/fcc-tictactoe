@@ -1,5 +1,5 @@
 #Tic-Tac-Toe
-This is my entry for Free Code Camp tic-tac-toe project - it isn't done yet...
+This is my entry for Free Code Camp tic-tac-toe project 
 
 ###Built With
 +  HTML  
