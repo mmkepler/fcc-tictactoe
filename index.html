@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Tic-Tac-Toe</title>
+    <link href="img/mkfav.png" rel="icon" type="image/png" />
+    <link href="https://fonts.googleapis.com/css?family=Fira+Mono:700" rel="stylesheet">
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+
+    <div class="holder">
+      <div class="container">
+
+      <div id="choiceScreen">
+        <h1>Choose an Icon</h1>
+        <button class="btn choice" value="X">X</button>
+        <button class="btn choice" value="O">O</button>
+      </div> 
+          
+      <div class="outside">
+      <div class="middle">
+      <div class="inside">
+
+        <div class="row top">
+          <div class="scoreHolder">
+            <div class="col-xs-4">
+              <div class="score">
+                <div id="player">
+                  <p>Player</p>
+                  <div id="playerDiv" class="scoreSpot">
+                    <p id="playerScore">
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-4">
+						
+              <button class="btn" id="reset">Reset</button>
+							<button class="btn" id="newGame">New Game</button>
+							<div id="message">
+								<p id="alert"></p>
+							</div>
+							
+            </div>
+
+            <div class="col-xs-4">
+              <div class="score">
+                <div id="comp">
+                  <p>COMPUTER</p>
+                  <div id="compDiv" class="scoreSpot">
+                    <p id="compScore"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="hold">
+          <button class="btn tic swing" id="t0"></button>
+          <button class="btn tic swing" id="t1"></button>
+          <button class="btn tic swing" id="t2"></button>
+        </div>
+        <div class="hold">
+          <button class="btn tic swing" id="t3"></button>
+          <button class="btn tic swing" id="t4"></button>
+          <button class="btn tic swing" id="t5"></button>
+        </div>
+        <div class="hold">
+          <button class="btn tic swing" id="t6"></button>
+          <button class="btn tic swing" id="t7"></button>
+          <button class="btn tic swing" id="t8"></button>
+        </div>
+      </div>
+      </div>
+      </div>
+    </div>
+  </div>
+      
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+  <script src="js/app3.js"></script>
+  <script src="js/jquery.ripples.js"></script>
+  <script> 
+    $(document).ready(function(){
+      
+      $(".middle").ripples({
+	   resolution: 512,
+	   dropRadius: 10,
+	   perturbance: 0.02,
+  	   interactive: true      
+      });
+	    
+    $("#choiceScreen").ripples({
+      resolution: 512,
+	  dropRadius: 10,
+	  perturbance: 0.02,
+  	  interactive: true      
+	});	  
+    
+    $(".outside").ripples({
+      resolution: 512,
+      dropRadius: 5,
+      perturbance: 0.01,
+  	  interactive: false
+    });
+			
+		setInterval(function() {
+		var $el = $('#choiceScreen');
+		var x = Math.random() * $el.outerWidth();
+		var y = Math.random() * $el.outerHeight();
+		var dropRadius = 10;
+		var strength = 0.03 + Math.random() * 0.03;
+
+		$el.ripples('drop', x, y, dropRadius, strength);
+	}, 800);
+        
+    setInterval(function() {
+		var $el = $('.outside');
+		var x = Math.random() * $el.outerWidth();
+		var y = Math.random() * $el.outerHeight();
+		var dropRadius = 12;
+		var strength = 0.09 + Math.random() * 0.09;
+
+		$el.ripples('drop', x, y, dropRadius, strength);
+	}, 500);
+       
+  });
+
+    </script>
+
+</body>
+</html>

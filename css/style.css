@@ -1,0 +1,220 @@
+
+body {
+  height: 100%;
+  width: 100%;
+  display: inline;
+  font-family: 'Fira Mono', monospace;
+  /*color: black;*/
+  background-color: black;
+  font-size: 16px;
+  text-align: center;
+}
+
+.top {
+  width: 460px;
+  margin: 0 auto 30px auto;
+  padding: 0 34px;
+}
+
+.tic {
+  width: 100px;
+  height: 100px;
+  padding: 0 auto;
+  margin: 10px;
+  border-radius: 10%;
+  border: 2px solid #01577e;
+  box-shadow: inset -1px -1px 6px #028bc4, inset 1px 1px 6px #028bc4;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 4em;
+  color: black;
+  text-shadow: 1px 1px 2px #01577e, -1px -1px 2px white; 
+}
+
+.choice {
+  height: auto;
+  width: 60px;
+  font-size: 2em;
+  border: 2px solid #017eb1;
+  box-shadow: inset -1px -1px 6px #028bc4, inset 1px 1px 6px #028bc4;
+  border-radius: 10%;
+  background-color: white;
+  margin: 20px 5px 0 5px;
+  background-color: rgba(255, 255, 255, 0.4);
+  color: black;
+}
+
+.hold {
+  text-align: center;
+  margin: 0 auto;
+  width: 400px;
+  height: 120px;
+}
+
+.holder {
+  padding: 40px;
+}
+
+.inside {
+  width: 460px;
+  height: 540px;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+/*two more background divs for the ripple animation. One is constant, the other has triggers from movement*/
+
+.middle {
+  background-image: url("../img/tic-tac-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 460px;
+  height: 540px;
+  margin: 0 auto;
+  opacity: 0.9;
+  padding: 0;
+}
+
+.outside{
+  width: 476px;
+  height: 556px;
+  background-image: url("../img/tic-tac-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+  border: 8px solid rgba(1, 126, 177, 0.7);
+}
+
+#player, #comp, #playerDiv, #compDiv {
+  display: inline-block;
+  margin: 0;
+}
+
+#reset, #newGame {
+  margin: 0 auto;
+  border: 2px solid #01577e;
+  box-shadow: inset -1px -1px 4px #028bc4, inset 1px 1px 4px #028bc4;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10%;
+  color: black;
+  padding: 4px 8px;
+}
+
+#newGame {
+  margin-top: 16px;
+}
+#reset {
+	margin-top: 24px;
+}
+
+#message {
+	margin-top: 12px;
+	font-size: 18px;
+}
+
+.scoreSpot {
+  height: 26px;
+  width: 50px;
+  border: 2px solid #01577e;
+  background-color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  padding-top: 2px;
+}
+
+#player p, #comp p {
+  margin-bottom: 4px;
+}
+
+.score {
+  height: 80px;
+  width: 100px;
+  border: 2px solid #01577e;
+  box-shadow: inset -1px -1px 6px #028bc4, inset 1px 1px 6px #028bc4;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  margin: 0 auto;
+  border-radius: 10%;
+}
+
+.btn:focus, .btn:active, .btn:hover, .btn:active:focus {
+  outline: 0;
+}
+.btn:disabled {
+  opacity: 1;
+  box-shadow: inset -1px -1px 6px #028bc4, inset 1px 1px 6px #028bc4;
+  
+}
+
+#choiceScreen {
+  width: 460px;
+  height: 220px;
+  background-image: url("../img/tic-tac-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 20px 20px 50px 20px;
+  border: 8px inset #017eb1;
+  margin: 0 auto;
+}
+
+
+/*Animation for slight movement when you hover or click on tiles*/
+
+@-webkit-keyframes swing{
+  10%{
+      -webkit-transform: translateX(1px);
+      transform: translateX(1px);
+    }
+  25%{
+       -webkit-transform: translateX(-1px);
+       transform: translateX(-2px);
+    } 
+  50%{
+        -webkit-transform: translateX(1px);
+        transform: translateX(2px);
+    }
+  75%{
+        -webkit-transform: translateX(-1px);
+        transform: translateX(-2px);
+    }
+  90%{
+        -webkit-transform: translateX(1px);
+        transform: translateX(1px);
+    }
+  100%{
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@keyframes swing{
+  10%{
+        -webkit-transform: translateX(1px);
+        transform: translateX(1px);
+    }
+  25%{
+        -webkit-transform: translateX(-1px);
+        transform: translateX(-1px);
+    }
+  50%{
+        -webkit-transform: translateX(1px);
+        transform: translateX(1px);
+    }
+  75%{
+        -webkit-transform: translateX(-1px);
+        transform: translateX(-1px);
+    }
+  90%{
+        -webkit-transform: translateX(1px);
+        transform: translateX(1px);
+    }
+  100%{
+       -webkit-transform: translateX(0);
+       transform: translateX(0);
+    }
+}
+
+.swing:hover {
+  -webkit-animation: swing 1s ease;
+  animation: swing 1s ease;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
