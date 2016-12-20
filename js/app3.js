@@ -100,6 +100,7 @@ function resetState(){
 
 function disableTiles(){
   $(".tic").prop("disabled", true);
+  $(".tic").removeClass("swing");
   
 }
 
@@ -113,6 +114,7 @@ function checkForTerminal() {
 	  case 1:
 	    compWins++;
 	    disableTiles();
+         
 	    $("#compScore").text(compWins);
 	    $("#alert").html(lose);
 	    endGame();
