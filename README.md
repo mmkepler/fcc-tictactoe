@@ -7,6 +7,7 @@ This is my entry for Free Code Camp tic-tac-toe project
 +  Javascript   
 +  Jquery  
 +  Bootstrap  
++  Jquery ripples plugin https://github.com/sirxemic/jquery.ripples 
 
 ###Author
 +  Melissa Kepler a.k.a. Missarachid  
