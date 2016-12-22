@@ -80,6 +80,10 @@ function restartGame() {
   $(".outside").hide();
   $("#choiceScreen").show();
   compMove = false;
+  compWins = 0;
+  playerWins = 0;
+  $("#playerScore").html(playerWins);
+  $("#compScore").html(compWins);
   updateState();
 }
 
