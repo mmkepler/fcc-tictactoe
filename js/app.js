@@ -23,10 +23,10 @@ checkForTerminal();
 
 $("#playerScore").html(playerWins);
 $("#compScore").html(compWins);
-//$("#choiceScreen").show();
-//$(".inside").hide();
-//$(".outside").hide();
-//$(".middle").hide();
+$("#choiceScreen").show();
+$(".inside").hide();
+$(".outside").hide();
+$(".middle").hide();
 $("#newGame").hide();
 $("#message").hide();
 
@@ -90,8 +90,8 @@ function restartGame() {
 //restarts the state, but not the player/comp icons and scores
 function resetState(){
   $(".tic").prop("disabled", false).addClass("swing");
-  $(".tic").empty();
   state = [null, null, null, null, null, null, null, null, null];
+  updateState();
   if(playerIcon === "X"){
     compMove = false;
   }else{
@@ -112,7 +112,7 @@ function disableTiles(){
 function checkForTerminal() {
   updateState();
     
-  let winner = winCheck(state);
+  var winner = winCheck(state);
    if(winner !== null){
      switch(winner){
 	  case 1:
@@ -149,6 +149,7 @@ function endGame(){
   $("#message").fadeIn(200);
   setTimeout(function(){
     $("#message").fadeOut(200).hide(200).promise().done(function(){
+    $(".tic").contents().fadeOut(300).empty();
       resetState();
 		});
   }, 3000);
@@ -218,7 +219,7 @@ function updateState() {
           break;
         case null:
           buttonText = "";
-          break
+          break;
       }
       $("#t" + i ).text(buttonText);
       if(state[i] !== null){
@@ -244,7 +245,7 @@ function minimax(state) {
 
 //checks to see if the state is in a terminal state, and if not it calls itself until a move is chosen that will maximize the ai players chance of winning. 
 function recursiveMinimax(state, player) {
-  let winner = winCheck(state);
+  var winner = winCheck(state);
   if (winner !== null) {
     switch(winner) {
       case 1:
