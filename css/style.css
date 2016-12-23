@@ -1,13 +1,67 @@
-
 body {
-  height: 100%;
-  width: 100%;
   display: inline;
   font-family: 'Fira Mono', monospace;
-  /*color: black;*/
   background-color: black;
   font-size: 16px;
+  color: black;
   text-align: center;
+}
+
+/*Opening Choice Screen*/
+.choice {
+  height: auto;
+  width: 60px;
+  font-size: 2em;
+  border: 2px solid #017eb1;
+  box-shadow: inset -1px -1px 6px #028bc4, inset 1px 1px 6px #028bc4;
+  border-radius: 10%;
+  margin: 20px 5px 0 5px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+#choiceScreen {
+  width: 460px;
+  height: 220px;
+  background: url("../img/tic-tac-bg.jpg") no-repeat center;
+  background-size: cover;
+  padding: 20px 20px 50px 20px;
+  border: 8px inset #017eb1;
+  margin: 0 auto;
+}
+
+
+/*Main game interface*/
+
+.holder {
+  padding: 40px;
+}
+
+.inside {
+  width: 460px;
+  height: 540px;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+/*two more background divs for the ripple animation. One is constant, the other has triggers from movement*/
+
+.middle {
+  background: url("../img/tic-tac-bg.jpg") no-repeat center;
+  background-size: cover;
+  width: 460px;
+  height: 540px;
+  margin: 0 auto;
+  opacity: 0.9;
+  padding: 0;
+}
+
+.outside{
+  width: 476px;
+  height: 556px;
+  background: url("../img/tic-tac-bg.jpg") no-repeat center;
+  background-size: cover;
+  margin: 0 auto;
+  border: 8px solid rgba(1, 126, 177, 0.7);
 }
 
 .top {
@@ -26,21 +80,15 @@ body {
   box-shadow: inset -1px -1px 6px #028bc4, inset 1px 1px 6px #028bc4;
   background-color: rgba(255, 255, 255, 0.5);
   font-size: 4em;
-  color: black;
   text-shadow: 1px 1px 2px #01577e, -1px -1px 2px white; 
 }
 
-.choice {
-  height: auto;
-  width: 60px;
-  font-size: 2em;
-  border: 2px solid #017eb1;
+.btn:focus, .btn:active, .btn:hover, .btn:active:focus {
+  outline: 0;
+}
+.btn:disabled {
+  opacity: 1;
   box-shadow: inset -1px -1px 6px #028bc4, inset 1px 1px 6px #028bc4;
-  border-radius: 10%;
-  background-color: white;
-  margin: 20px 5px 0 5px;
-  background-color: rgba(255, 255, 255, 0.4);
-  color: black;
 }
 
 .hold {
@@ -50,65 +98,9 @@ body {
   height: 120px;
 }
 
-.holder {
-  padding: 40px;
-}
-
-.inside {
-  width: 460px;
-  height: 540px;
-  margin: 0 auto;
-  padding-top: 40px;
-}
-
-/*two more background divs for the ripple animation. One is constant, the other has triggers from movement*/
-
-.middle {
-  background-image: url("../img/tic-tac-bg.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 460px;
-  height: 540px;
-  margin: 0 auto;
-  opacity: 0.9;
-  padding: 0;
-}
-
-.outside{
-  width: 476px;
-  height: 556px;
-  background-image: url("../img/tic-tac-bg.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin: 0 auto;
-  border: 8px solid rgba(1, 126, 177, 0.7);
-}
-
 #player, #comp, #playerDiv, #compDiv {
   display: inline-block;
   margin: 0;
-}
-
-#reset, #newGame {
-  margin: 0 auto;
-  border: 2px solid #01577e;
-  box-shadow: inset -1px -1px 4px #028bc4, inset 1px 1px 4px #028bc4;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 10%;
-  color: black;
-  padding: 4px 8px;
-}
-
-#newGame {
-  margin-top: 16px;
-}
-#reset {
-	margin-top: 24px;
-}
-
-#message {
-	margin-top: 12px;
-	font-size: 18px;
 }
 
 .scoreSpot {
@@ -135,30 +127,24 @@ body {
   border-radius: 10%;
 }
 
-.btn:focus, .btn:active, .btn:hover, .btn:active:focus {
-  outline: 0;
-}
-.btn:disabled {
-  opacity: 1;
-  box-shadow: inset -1px -1px 6px #028bc4, inset 1px 1px 6px #028bc4;
-  
+#reset {
+  margin: 0 auto;
+  border: 2px solid #01577e;
+  box-shadow: inset -1px -1px 3px #028bc4, inset 1px 1px 3px #028bc4;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10%;
+  padding: 2px 8px;
 }
 
-#choiceScreen {
-  width: 460px;
-  height: 220px;
-  background-image: url("../img/tic-tac-bg.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 20px 20px 50px 20px;
-  border: 8px inset #017eb1;
-  margin: 0 auto;
+#message {
+	margin-top: 12px;
+	font-size: 18px;
 }
 
 
 /*Animation for slight movement when you hover or click on tiles*/
 
-@-webkit-keyframes swing{
+@-webkit-keyframes sway{
   10%{
       -webkit-transform: translateX(1px);
       transform: translateX(1px);
@@ -185,7 +171,7 @@ body {
     }
 }
 
-@keyframes swing{
+@keyframes sway{
   10%{
         -webkit-transform: translateX(1px);
         transform: translateX(1px);
@@ -213,8 +199,8 @@ body {
 }
 
 .swing:hover {
-  -webkit-animation: swing 1s ease;
-  animation: swing 1s ease;
+  -webkit-animation: sway 1s ease;
+  animation: sway 1s ease;
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
 }

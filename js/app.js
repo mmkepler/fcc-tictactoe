@@ -23,10 +23,10 @@ checkForTerminal();
 
 $("#playerScore").html(playerWins);
 $("#compScore").html(compWins);
-$("#choiceScreen").show();
-$(".inside").hide();
-$(".outside").hide();
-$(".middle").hide();
+//$("#choiceScreen").show();
+//$(".inside").hide();
+//$(".outside").hide();
+//$(".middle").hide();
 $("#newGame").hide();
 $("#message").hide();
 
@@ -98,7 +98,7 @@ function resetState(){
     compMove = true;
     moveAI();
   }
-  $("#reset").animate({"margin-top": "24px"}, 500);
+  
 }
 
 
@@ -145,14 +145,11 @@ function checkForTerminal() {
 
 //animation that moves the newGame and reset buttons when there is a terminal state
 function endGame(){
-  $("#reset").prop("disabled", true);
-  $("#reset").animate({"margin-top": "0"},500).promise().done (function(){
-      $("#message").fadeIn(200);
-  });
+  $(".tic").prop("disabled", true);
+  $("#message").fadeIn(200);
   setTimeout(function(){
     $("#message").fadeOut(200).hide(200).promise().done(function(){
-      $("#newGame").fadeIn(600);
-      $("#reset").prop("disabled", false);
+      resetState();
 		});
   }, 3000);
 }
