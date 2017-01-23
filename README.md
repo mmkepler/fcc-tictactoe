@@ -18,3 +18,5 @@ This is my entry for Free Code Camp tic-tac-toe project
 https://blog.vivekpanyam.com/how-to-build-an-ai-that-wins-the-basics-of-minimax-search/
 +  sirxemic for making the Jquery ripples plugin I used to give my project a watery feel
 http://sirxemic.github.io/jquery.ripples/
+
+###The project can be found here https://missarachnid.github.io/fcc-tictactoe/
