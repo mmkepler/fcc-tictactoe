@@ -29,6 +29,7 @@ $(".outside").hide();
 $(".middle").hide();
 $("#newGame").hide();
 $("#message").hide();
+$(".links").hide();
 
 /*Makes sure that computer takes it's move*/
 if (compMove) {
@@ -51,6 +52,7 @@ function gameStart(){
   $(".middle").hide();
   $("#newGame").hide();
   $("#message").hide();
+  $(".links").hide();
 }
 
 //adds the players chosen icon, & assigns comp icon
@@ -68,6 +70,7 @@ function choice(icon) {
   $(".inside").show();
   $(".middle").show();
   $(".outside").show();
+  $(".links").show();
 }
 
 //resets everything back to the choice screen
@@ -78,6 +81,7 @@ function restartGame() {
   $(".inside").hide();
   $(".middle").hide();
   $(".outside").hide();
+  $(".links").hide();
   $("#choiceScreen").show();
   compMove = false;
   compWins = 0;

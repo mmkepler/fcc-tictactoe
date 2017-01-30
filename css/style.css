@@ -204,3 +204,22 @@ body {
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
 }
+
+.footer{
+  margin-top: 20px;
+  height: 30px;
+}
+
+.links {
+  font-size: 14px;
+  background-color: #cceeff;
+  color: black;
+  border: 2px solid #01577e;
+  padding: 5px 10px;
+  display: inline-block;
+  margin: 20px 5px 0 5px;
+}
+
+.links:focus, .links:hover, .links:focus {
+  text-decoration: none;
+}
