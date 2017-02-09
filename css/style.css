@@ -206,15 +206,16 @@ body {
 }
 
 .footer{
-  margin-top: 20px;
-  height: 30px;
+  margin-top: 10px;
+  height: 36px;
 }
 
 .links {
   font-size: 14px;
-  background-color: #cceeff;
+  background: url("../img/tic-tac-bg.jpg") no-repeat center;
   color: black;
   border: 2px solid #01577e;
+  border-radius: 8px;
   padding: 5px 10px;
   display: inline-block;
   margin: 20px 5px 0 5px;
