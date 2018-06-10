@@ -1,7 +1,7 @@
-#Tic-Tac-Toe
+#  Tic-Tac-Toe
 This is my entry for Free Code Camp tic-tac-toe project 
 
-###Built With
+###  Built With
 +  HTML  
 +  CSS  
 +  Javascript   
@@ -9,14 +9,14 @@ This is my entry for Free Code Camp tic-tac-toe project
 +  Bootstrap  
 +  Jquery ripples plugin https://github.com/sirxemic/jquery.ripples 
 
-###Author
+###  Author
 +  Melissa Kepler a.k.a. Missarachid  
 
-###Acknowledgements
+###  Acknowledgements
 +  Free Code Camp
 +  Vivek Panyam - tearing apart his code helped me to understand how to use the minimax algorithm in javascript
 https://blog.vivekpanyam.com/how-to-build-an-ai-that-wins-the-basics-of-minimax-search/
 +  sirxemic for making the Jquery ripples plugin I used to give my project a watery feel
 http://sirxemic.github.io/jquery.ripples/
 
-###The project can be found here https://missarachnid.github.io/fcc-tictactoe/
+###  The project can be found [here](https://missarachnid.github.io/fcc-tictactoe/)
