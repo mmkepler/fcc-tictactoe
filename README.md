@@ -1,6 +1,8 @@
 #  Tic-Tac-Toe
 This is my entry for Free Code Camp tic-tac-toe project 
 
+##  The project can be found [here](https://mmkepler.github.io/fcc-tictactoe/)
+
 ###  Built With
 +  HTML  
 +  CSS  
@@ -10,7 +12,7 @@ This is my entry for Free Code Camp tic-tac-toe project
 +  Jquery ripples plugin https://github.com/sirxemic/jquery.ripples 
 
 ###  Author
-+  Melissa Kepler a.k.a. Missarachid  
++  Melissa Kepler   
 
 ###  Acknowledgements
 +  Free Code Camp
@@ -19,4 +21,4 @@ https://blog.vivekpanyam.com/how-to-build-an-ai-that-wins-the-basics-of-minimax-
 +  sirxemic for making the Jquery ripples plugin I used to give my project a watery feel
 http://sirxemic.github.io/jquery.ripples/
 
-###  The project can be found [here](https://missarachnid.github.io/fcc-tictactoe/)
+
